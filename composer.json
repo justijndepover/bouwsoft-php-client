@@ -1,0 +1,12 @@
+{
+    "name": "justijndepover/bouwsoft-php-client",
+    "description": "PHP Client to connect with Bouwsoft (Use it Group)",
+    "type": "composer-plugin",
+    "authors": [
+        {
+            "name": "justijndepover",
+            "email": "justijndepover@gmail.com"
+        }
+    ],
+    "require": {}
+}
