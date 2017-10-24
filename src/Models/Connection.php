@@ -128,7 +128,7 @@ class Connection
             $this->acquireRefreshToken();
         }
 
-        if($this->tokenHasExpired() && !$this->needsAuthentication()) {
+        if($this->tokenHasExpired()) {
             $this->acquireAccessToken();
         }
 
@@ -185,7 +185,7 @@ class Connection
             return true;
         }
 
-        return $this->tokenExpires <= time() + 10;
+        return $this->tokenExpires <= time();
     }
 
     /**
@@ -304,7 +304,7 @@ class Connection
         if (empty($this->refreshToken)) {
             $this->acquireRefreshToken();
         }
-        if($this->tokenHasExpired() && !$this->needsAuthentication()) {
+        if($this->tokenHasExpired()) {
             $this->acquireAccessToken();
         }
 
