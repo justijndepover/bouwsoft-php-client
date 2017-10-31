@@ -46,7 +46,7 @@ class BouwsoftServiceProvider extends ServiceProvider
                 $connection->setClientNr($config->bouwsoft_clientNr);
             }
             if(isset($config->bouwsoft_refreshToken)) {
-                $connection->setRefreshToken($config->bouwsoft_refreshToken);
+                $connection->setRefreshToken(decrypt($config->bouwsoft_refreshToken));
             }
             if(isset($config->bouwsoft_accessToken)) {
                 $connection->setAccessToken($config->bouwsoft_accessToken);
@@ -70,7 +70,7 @@ class BouwsoftServiceProvider extends ServiceProvider
             $config->bouwsoft_requestId = $connection->getRequestId();
             $config->bouwsoft_clientNr = $connection->getClientNr();
             $config->bouwsoft_accessToken = $connection->getAccessToken();
-            $config->bouwsoft_refreshToken = $connection->getRefreshToken();
+            $config->bouwsoft_refreshToken = encrypt($connection->getRefreshToken());
             $config->bouwsoft_tokenExpires = $connection->getTokenExpires();
             $config->bouwsoft_serverUrl = $connection->getServerUrl();
             $config->save();
