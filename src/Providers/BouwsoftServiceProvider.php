@@ -64,6 +64,7 @@ class BouwsoftServiceProvider extends ServiceProvider
                  $connection->connect();
 
             } catch (\Exception $e) {
+                return false;
                 throw new \Exception('Could not connect to Bouwsoft: ' . $e->getMessage());
             }
 

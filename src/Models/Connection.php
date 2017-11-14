@@ -181,6 +181,7 @@ class Connection
      */
     private function tokenHasExpired()
     {
+        return true;
         if (empty($this->tokenExpires)) {
             return true;
         }
